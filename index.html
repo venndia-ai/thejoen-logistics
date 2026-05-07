@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>더조은 물류 - 산업과 산업을 연결하는 물류의 근간</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<title>더조은 물류 - 더 빠르게, 더 안전하게</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --blue: #1a5fd4;
+  --blue: #34c759;
+  --bh: #30b350;
   --blue-dark: #0d3d8c;
   --blue-light: #2b7de9;
   --blue-pale: #e8f0fc;
@@ -27,7 +27,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Noto Sans KR', sans-serif; color: var(--text); overflow-x: hidden; }
+body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); overflow-x: hidden; }
 
 /* ===================== NAV ===================== */
 nav {
@@ -66,23 +66,15 @@ nav {
 
 /* ===================== HERO ===================== */
 .hero {
-  position: relative; min-height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 720px;
   display: flex; flex-direction: column;
-  padding-top: 60px; overflow: hidden;
-}
-.hero-photo {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(20, 85, 164, 0.35) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(26, 107, 199, 0.2) 0%, transparent 60%),
-    #0a1628;
-}
-.hero-grid-bg {
-  position: absolute; inset: 0; z-index: 1;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  padding: 60px 0 0;
+  background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=90');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-inner {
   position: relative; z-index: 2;
@@ -92,52 +84,19 @@ nav {
   gap: 40px;
 }
 .hero-text { flex: 1; padding-top: 20px; }
-.hero-top-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(26, 107, 199, 0.25);
-  border: 1px solid rgba(58, 143, 232, 0.4);
-  color: #5ab8ff;
-  font-size: 13px; font-weight: 500; letter-spacing: 0.5px;
-  padding: 7px 16px; border-radius: 20px;
-  margin-bottom: 28px;
-}
-.hero-top-badge::before {
-  content: ''; width: 7px; height: 7px;
-  background: #5ab8ff; border-radius: 50%;
-  animation: dotpulse 2s infinite;
-}
-@keyframes dotpulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 .hero-text h1 {
-  font-size: clamp(40px, 5.5vw, 72px);
-  font-weight: 900; color: white;
-  line-height: 1.15; letter-spacing: -2px;
-  margin-bottom: 24px;
+  font-size: clamp(32px, 4.5vw, 58px);
+  font-weight: 700; color: white;
+  line-height: 1.2; letter-spacing: -1px;
+  margin-bottom: 20px;
 }
-.hero-text h1 em { font-style: normal; color: #5ab8ff; }
+.hero-text h1 em { font-style: normal; color: #4cd964; }
 .hero-text p {
-  font-size: 17px; color: rgba(255,255,255,0.65);
-  line-height: 1.8; max-width: 500px;
-  margin-bottom: 40px;
+  font-size: 16px; color: rgba(255,255,255,0.75);
+  line-height: 1.8; max-width: 440px;
 }
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-.btn-hero-primary {
-  background: var(--blue); color: white;
-  padding: 15px 32px; border-radius: 8px;
-  text-decoration: none; font-size: 15px; font-weight: 700;
-  display: inline-flex; align-items: center; gap: 8px;
-  transition: all 0.2s;
-}
-.btn-hero-primary:hover { background: var(--blue-light); transform: translateY(-2px); }
-.btn-hero-secondary {
-  background: transparent; color: white;
-  padding: 15px 32px; border-radius: 8px;
-  text-decoration: none; font-size: 15px; font-weight: 500;
-  border: 1px solid rgba(255,255,255,0.3);
-  transition: all 0.2s;
-}
-.btn-hero-secondary:hover { border-color: rgba(255,255,255,0.7); }
 .hero-badges {
-  display: none;
+  display: flex; gap: 10px; margin-top: 32px; flex-wrap: wrap;
 }
 .hero-badge {
   background: rgba(255,255,255,0.12);
@@ -152,7 +111,6 @@ nav {
   width: 340px; flex-shrink: 0;
   background: white; border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-  overflow: hidden;
 }
 .panel-header {
   padding: 18px 20px 14px;
@@ -251,7 +209,7 @@ nav {
 .status-gray { background: var(--gray-100); color: var(--gray-600); }
 
 /* ===================== WHY US ===================== */
-.why-section { background: var(--gray-50); padding: 80px 0; }
+.why-section { background: #f5f5f7; padding: 80px 0; }
 .why-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
 .section-header { text-align: center; margin-bottom: 56px; }
 .section-tag {
@@ -260,24 +218,20 @@ nav {
   text-transform: uppercase; padding: 5px 14px; border-radius: 20px;
   margin-bottom: 14px;
 }
-.section-title { font-size: clamp(26px, 3vw, 38px); font-weight: 800; letter-spacing: -0.5px; }
+.section-title { font-size: clamp(26px, 3vw, 38px); font-weight: 700; letter-spacing: -0.5px; }
 .section-sub { font-size: 15px; color: var(--gray-600); margin-top: 10px; line-height: 1.7; }
 .why-cards {
-  display: flex; flex-direction: column; gap: 20px; max-width: 860px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
 }
 .why-card {
-  background: white; border-radius: 16px; padding: 28px 36px;
+  background: white; border-radius: 14px; padding: 32px 28px;
   border: 1px solid var(--gray-200);
   transition: all 0.2s;
-  display: flex; align-items: center; gap: 32px;
 }
-.why-card:hover { box-shadow: 0 8px 32px rgba(26,95,212,0.1); border-color: #bdd3f7; transform: translateY(-2px); }
-.why-card-body { flex: 1; }
-.why-card-num { font-size: 12px; font-weight: 700; color: var(--blue); margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
-.why-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--blue); }
-.why-card p { font-size: 14px; color: var(--gray-600); line-height: 1.8; }
-.why-card-illust { width: 130px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-.why-card-illust svg { width: 120px; height: 120px; }
+.why-card:hover { box-shadow: 0 8px 32px rgba(26,95,212,0.1); border-color: #bdd3f7; transform: translateY(-3px); }
+.why-card-num { font-size: 42px; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 10px; }
+.why-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.why-card p { font-size: 13px; color: var(--gray-600); line-height: 1.7; }
 
 /* ===================== SERVICES ===================== */
 .services-section { background: white; padding: 80px 0; }
@@ -434,7 +388,7 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .svc-grid { grid-template-columns: repeat(2,1fr); } .why-card-illust { width: 100px; } .why-card-illust svg { width: 90px; height: 90px; }
+  .why-cards, .svc-grid { grid-template-columns: repeat(2,1fr); }
   .hero-form-panel { width: 300px; }
 }
 @media (max-width: 768px) {
@@ -442,8 +396,10 @@ footer {
   .nav-menu { display: none; }
   .hero-inner { flex-direction: column; padding: 40px 20px 30px; }
   .hero-form-panel { width: 100%; }
+  .hero { height: auto; min-height: 600px; }
+  .hero-text h1 { font-size: 40px !important; line-height: 1.25; }
   .live-inner, .why-inner, .services-inner, .vehicle-inner, .inquiry-inner, .process-inner, .footer-inner { padding: 0 20px; }
-  .svc-grid { grid-template-columns: 1fr; } .why-card { flex-direction: column; gap: 16px; } .why-card-illust { width: 80px; }
+  .why-cards, .svc-grid { grid-template-columns: 1fr; }
   .inquiry-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 24px; }
   .process-steps { flex-direction: column; gap: 0; }
@@ -461,7 +417,6 @@ footer {
     <span class="logo-name"><span>더조은</span>물류</span>
   </a>
   <ul class="nav-menu">
-    <li><a href="#about">소개</a></li>
     <li><a href="#vehicle">차량규격</a></li>
     <li><a href="#price">전국 화물 요금</a></li>
     <li><a href="#inquiry">기업 계약거래 안내</a></li>
@@ -476,18 +431,14 @@ footer {
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-photo"></div>
-  <div class="hero-grid-bg"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-top-badge">신뢰할 수 있는 물류 파트너</div>
       <h1>더 빠르게,<br>더 <em>안전하게</em>,<br>더 조은 물류</h1>
-      <p>전국 어디든 정시 배송을 원칙으로, 고객의 소중한 화물을 최선을 다해 운반합니다. 10년 이상의 물류 경험과 전문 팀이 함께합니다.</p>
-      <div class="hero-btns">
-        <a href="#inquiry" class="btn-hero-primary">
-          ✉ 무료 견적 문의
-        </a>
-        <a href="#vehicle" class="btn-hero-secondary">서비스 알아보기</a>
+      <p>전국 어디든 정시 배송을 원칙으로,<br>고객의 소중한 화물을 책임지고 운반합니다.<br>10년 이상의 물류 경험과 전문 기사가 함께합니다.</p>
+      <div class="hero-badges">
+        <span class="hero-badge">📦 전국 배송 네트워크</span>
+        <span class="hero-badge">🚚 1톤 ~ 25톤 다마스·라보·트럭</span>
+        <span class="hero-badge">📞 24시간 고객 대응</span>
       </div>
     </div>
     <!-- 신청 폼 패널 -->
@@ -551,26 +502,7 @@ footer {
     </div>
   </div>
 
-  <!-- 실시간 배차현황 -->
-  <div class="live-section" id="about">
-    <div class="live-inner">
-      <h2 class="live-title"><span></span>실시간 배차현황</h2>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>일자</th>
-            <th>상차지</th>
-            <th>하차지</th>
-            <th>차종</th>
-            <th>화물정보</th>
-            <th>상태</th>
-          </tr>
-        </thead>
-        <tbody id="liveTableBody"></tbody>
-      </table>
-    </div>
-  </div>
-</section>
+  
 
 <!-- WHY US -->
 <section class="why-section">
@@ -580,135 +512,21 @@ footer {
       <h2 class="section-title">이런 분들께 자신있게 추천드립니다!</h2>
     </div>
     <div class="why-cards">
-
-      <!-- 카드 1 -->
       <div class="why-card">
-        <div class="why-card-body">
-          <div class="why-card-num">1. 화물배차 어떻게 해야될지 모르겠다</div>
-          <h4>화물배차 어떻게 해야될지 모르겠다</h4>
-          <p>카고? 탑? 윙바디? 호루? 차량 종류도 많고 보내는 물건을 어떤 차에 싣어야 될지 모르시겠다구요? 걱정마세요! 더조은 물류의 다년간 노하우로 적절한 차량 배차를 빠르게 도와 드리겠습니다.</p>
-        </div>
-        <div class="why-card-illust">
-          <!-- 남자가 고민하는 일러스트 -->
-          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <!-- 물음표 -->
-            <text x="88" y="28" font-size="22" fill="#ccc" font-family="serif" font-weight="bold">?</text>
-            <!-- 몸 -->
-            <rect x="38" y="62" width="34" height="38" rx="6" fill="#dde8f5"/>
-            <!-- 팔 왼쪽 -->
-            <path d="M38 70 Q20 75 22 90" stroke="#dde8f5" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <!-- 팔 오른쪽 (턱 괴기) -->
-            <path d="M72 70 Q88 72 86 82" stroke="#dde8f5" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <!-- 손 (턱) -->
-            <ellipse cx="84" cy="85" rx="7" ry="6" fill="#f5cba7"/>
-            <!-- 목 -->
-            <rect x="50" y="54" width="10" height="12" rx="3" fill="#f5cba7"/>
-            <!-- 머리 -->
-            <ellipse cx="55" cy="44" rx="18" ry="19" fill="#f5cba7"/>
-            <!-- 머리카락 -->
-            <ellipse cx="55" cy="28" rx="18" ry="9" fill="#5d4037"/>
-            <rect x="37" y="28" width="6" height="16" rx="3" fill="#5d4037"/>
-            <rect x="72" y="28" width="6" height="16" rx="3" fill="#5d4037"/>
-            <!-- 눈 -->
-            <ellipse cx="48" cy="44" rx="3" ry="3.5" fill="white"/>
-            <ellipse cx="62" cy="44" rx="3" ry="3.5" fill="white"/>
-            <circle cx="49" cy="45" r="1.8" fill="#333"/>
-            <circle cx="63" cy="45" r="1.8" fill="#333"/>
-            <!-- 눈썹 (찌푸림) -->
-            <path d="M44 39 Q48 37 52 39" stroke="#5d4037" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M58 39 Q62 37 66 39" stroke="#5d4037" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- 입 (고민) -->
-            <path d="M50 54 Q55 51 60 54" stroke="#c0826a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
+        <div class="why-card-num">01</div>
+        <h4>화물배차 어떻게 해야 될지 모르겠다</h4>
+        <p>카고? 탑? 윙바디? 호루? 차량 종류도 많고 보내는 물건을 어떤 차에 싣어야 될지 모르시겠다구요? 걱정마세요! 더조은 물류의 다년간 노하우로 적절한 차량 배차를 빠르게 도와 드리겠습니다.</p>
       </div>
-
-      <!-- 카드 2 -->
       <div class="why-card">
-        <div class="why-card-body">
-          <div class="why-card-num">2. 화물운임 지금 가격이 최선인가?</div>
-          <h4>화물운임 지금 가격이 최선인가?</h4>
-          <p>화물운임에 대해서 신뢰가 안가시나요? 화물운임이 너무 비싸다고 느껴지시나요? 더조은 물류는 다년간 쌓아온 화물정보 데이터베이스를 바탕으로 고객님들께 항상 합리적인 가격만 제안 드립니다.</p>
-        </div>
-        <div class="why-card-illust">
-          <!-- 여자 고민 일러스트 -->
-          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <!-- 물음표 -->
-            <text x="86" y="30" font-size="22" fill="#ccc" font-family="serif" font-weight="bold">?</text>
-            <!-- 몸 -->
-            <rect x="37" y="62" width="36" height="38" rx="6" fill="#c8e6c9"/>
-            <!-- 팔 왼쪽 -->
-            <path d="M37 70 Q18 78 20 92" stroke="#c8e6c9" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <!-- 팔 오른쪽 (턱 괴기) -->
-            <path d="M73 70 Q90 72 88 84" stroke="#c8e6c9" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <!-- 손 -->
-            <ellipse cx="86" cy="87" rx="7" ry="6" fill="#f5cba7"/>
-            <!-- 목 -->
-            <rect x="49" y="54" width="12" height="12" rx="3" fill="#f5cba7"/>
-            <!-- 머리 -->
-            <ellipse cx="55" cy="42" rx="19" ry="19" fill="#f5cba7"/>
-            <!-- 머리카락 긴 여성 -->
-            <ellipse cx="55" cy="26" rx="19" ry="10" fill="#8d6e63"/>
-            <rect x="36" y="26" width="7" height="32" rx="5" fill="#8d6e63"/>
-            <rect x="77" y="26" width="7" height="32" rx="5" fill="#8d6e63"/>
-            <!-- 눈 -->
-            <ellipse cx="47" cy="42" rx="3" ry="3.5" fill="white"/>
-            <ellipse cx="63" cy="42" rx="3" ry="3.5" fill="white"/>
-            <circle cx="48" cy="43" r="1.8" fill="#333"/>
-            <circle cx="64" cy="43" r="1.8" fill="#333"/>
-            <!-- 눈썹 -->
-            <path d="M43 37 Q47 35 51 37" stroke="#8d6e63" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M59 37 Q63 35 67 37" stroke="#8d6e63" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- 입 -->
-            <path d="M50 52 Q55 49 60 52" stroke="#c0826a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
+        <div class="why-card-num">02</div>
+        <h4>화물운임 지금 가격이 최선인가?</h4>
+        <p>화물운임에 대해서 신뢰가 안가시나요? 화물운임이 너무 비싸다고 느껴지시나요? 더조은 물류는 다년간 쌓아온 화물정보 데이터베이스를 바탕으로 고객님들께 항상 합리적인 가격만 제안 드립니다.</p>
       </div>
-
-      <!-- 카드 3 -->
       <div class="why-card">
-        <div class="why-card-body">
-          <div class="why-card-num">3. 주말/야간 화물배차 잘 안잡혀요</div>
-          <h4>주말/야간 화물배차 잘 안잡혀요</h4>
-          <p>출고일정이 일정치 않고 주말 / 야간 출고로 업무에 차질이 있으신가요? 더조은 물류는 24시간 고객대응팀 운영중입니다. 언제든지 고객님의 문의에 응답하도록 하겠습니다.</p>
-        </div>
-        <div class="why-card-illust">
-          <!-- 여자2 고민 일러스트 (곱슬) -->
-          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <!-- 물음표 2개 -->
-            <text x="80" y="26" font-size="17" fill="#ccc" font-family="serif" font-weight="bold">??</text>
-            <!-- 몸 -->
-            <rect x="37" y="62" width="36" height="38" rx="6" fill="#fff9c4"/>
-            <!-- 팔 왼쪽 -->
-            <path d="M37 70 Q18 78 20 92" stroke="#fff9c4" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <!-- 팔 오른쪽 -->
-            <path d="M73 70 Q90 74 88 88" stroke="#fff9c4" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <!-- 손 -->
-            <ellipse cx="86" cy="91" rx="7" ry="6" fill="#f5cba7"/>
-            <!-- 목 -->
-            <rect x="49" y="54" width="12" height="12" rx="3" fill="#f5cba7"/>
-            <!-- 머리 -->
-            <ellipse cx="55" cy="42" rx="19" ry="19" fill="#f5cba7"/>
-            <!-- 곱슬머리 -->
-            <circle cx="40" cy="34" r="9" fill="#4e342e"/>
-            <circle cx="55" cy="26" r="10" fill="#4e342e"/>
-            <circle cx="70" cy="34" r="9" fill="#4e342e"/>
-            <circle cx="36" cy="44" r="7" fill="#4e342e"/>
-            <circle cx="74" cy="44" r="7" fill="#4e342e"/>
-            <!-- 눈 -->
-            <ellipse cx="47" cy="43" rx="3" ry="3.5" fill="white"/>
-            <ellipse cx="63" cy="43" rx="3" ry="3.5" fill="white"/>
-            <circle cx="48" cy="44" r="1.8" fill="#333"/>
-            <circle cx="64" cy="44" r="1.8" fill="#333"/>
-            <!-- 눈썹 -->
-            <path d="M43 38 Q47 36 51 38" stroke="#4e342e" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M59 38 Q63 36 67 38" stroke="#4e342e" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- 입 걱정 -->
-            <path d="M49 53 Q55 50 61 53" stroke="#c0826a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
+        <div class="why-card-num">03</div>
+        <h4>주말/야간 화물배차 잘 안잡혀요</h4>
+        <p>출고일정이 일정치 않고 주말 / 야간 출고로 업무에 차질이 있으신가요? 더조은 물류는 24시간 고객대응팀 운영중입니다. 언제든지 고객님의 문의에 응답하도록 하겠습니다.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -995,48 +813,7 @@ function setTab(idx) {
   tabs.forEach((t,i) => t.classList.toggle('active', i===idx));
 }
 
-// 실시간 배차현황 더미 데이터
-const areas = ['서울시 강남구','서울시 마포구','서울시 송파구','경기 성남시','경기 수원시','인천 연수구','경기 고양시'];
-const cargos = ['나이키 슈즈','의류 박스','전자부품','식품류','의약품','가구류','인쇄물'];
-const vehicles = ['다마스','라보','1톤 카고','1.4톤 탑차','2.5톤 윙바디','오토바이'];
-const statuses = [
-  {text:'배차완료',cls:'status-blue'},
-  {text:'운송중',cls:'status-green'},
-  {text:'배송완료',cls:'status-gray'}
-];
-
-function pad(n){return n<10?'0'+n:n}
-function today(){const d=new Date();return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
-
-function genRows(n){
-  const tb=document.getElementById('liveTableBody');
-  tb.innerHTML='';
-  for(let i=0;i<n;i++){
-    const st=statuses[Math.floor(Math.random()*statuses.length)];
-    const tr=document.createElement('tr');
-    tr.innerHTML=`
-      <td>${today()}</td>
-      <td>${areas[Math.floor(Math.random()*areas.length)]} 국제금융로</td>
-      <td>${areas[Math.floor(Math.random()*areas.length)]} 국제금융로</td>
-      <td>${vehicles[Math.floor(Math.random()*vehicles.length)]}</td>
-      <td>${cargos[Math.floor(Math.random()*cargos.length)]}</td>
-      <td><span class="status-badge ${st.cls}">${st.text}</span></td>
-    `;
-    tb.appendChild(tr);
-  }
-}
-genRows(12);
-
-// 5초마다 상태 업데이트
-setInterval(()=>{
-  const badges=document.querySelectorAll('.status-badge');
-  if(badges.length){
-    const idx=Math.floor(Math.random()*badges.length);
-    const st=statuses[Math.floor(Math.random()*statuses.length)];
-    badges[idx].className=`status-badge ${st.cls}`;
-    badges[idx].textContent=st.text;
-  }
-},5000);
+;
 </script>
 </body>
 </html>
